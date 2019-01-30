@@ -1,9 +1,6 @@
 package com.Josh;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -17,7 +14,7 @@ public class Main {
         File selectedFile;
         JFileChooser chooser = new JFileChooser();
         String line;
-        String outFileName = "classmates.csv";
+        String outFileName = "classmates.txt";
         String defaultFileName = "classmates.csv";
         int lineCount = 0;
 
@@ -31,8 +28,8 @@ public class Main {
                 in = new Scanner(selectedFile); //opens the file
 
 
+                out = new PrintWriter("/Users/joshshell/Desktop/JavaPrograms/PersonReader/src/classmates.txt");
 
-                out = new PrintWriter(outFileName);
 
                 while(in.hasNextLine());{
                     line = in.nextLine();
